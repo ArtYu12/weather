@@ -1,0 +1,57 @@
+.h1 {
+    margin:0;
+    padding:0;
+    font-size:45px;
+    font-family: 'Boomboom';
+    user-select:none;
+}
+.h1::before {
+    content:'☀';
+    color:yellow;
+}
+.header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blueviolet;
+    padding:10px 10px 40px 10px;
+    position: relative;
+    
+}
+.p {
+    margin-right:150px;
+    font-weight: bold;
+    font-size:20px;
+    color:brown;
+}
+.ul {
+    display:flex;
+    background-color: bisque;
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    border-radius:20px;
+    position: absolute;
+    bottom:10px;
+    right:20px;
+}
+header ul li:not(:last-child) {
+    border-right:1px solid black;
+}
+.span {
+    margin:0;
+    padding:0;
+    position: absolute;
+    bottom:10px;
+    left:20px;
+    user-select:none;
+}
+.a {
+    color:black;
+    padding:3px 20px;
+    user-select:none;
+}
+.a:hover {
+    color:red;
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Boomboom';
+    src: local('Boomboom'), url('boomboom.woff2') format('woff2'), url('boomboom.woff') format('woff'), url('boomboom.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body > div {
+    background-color: lightblue;
+    padding:0;
+   
+}
+body {
+    background-color: aquamarine;
+}
