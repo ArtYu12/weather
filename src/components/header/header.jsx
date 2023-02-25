@@ -2,31 +2,9 @@ import stylesForHeader from './header.module.css';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-
-/*
-1. Черный
-2. Синий
-3. Голубой
-4. Белый
-5. Серый
-6. Зеленый
-7. Желтый
-8. Оранжевый
-9. Фиолетовый
-10. Розовый
-*/
-/*
-1. "Знай погоду заранее"
-2. "Планируй день с нами"
-3. "Погодные условия под контролем"
-4. "Для Вашего комфорта и безопасности"
-5. "Мы даем Вам погодную информацию"
-6. "Наши прогнозы Вам в помощь"
-7. "Узнай погоду в первую очередь"
-*/
 const Header = () => {
 const dispatch = useDispatch()
-const lang = useSelector(state => state.language)
+const lang = useSelector(state => state.language);
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -54,7 +32,7 @@ getLocation();
 
 
 const switchLang = (lang) => {
-  dispatch({type:'SWITCH_LANG',lang:lang})
+  dispatch({type:'SWITCH_LANG',lang:lang});
 }
 
 
@@ -72,7 +50,7 @@ let speak = (e)  => {
   return (
     <header className={stylesForHeader.header}>
         <h1 className={stylesForHeader.h1}>Weather</h1>
-        <p className={stylesForHeader.p} ref={newPostElement} onClick={speak}>{lang.motto}</p>
+        <p className={stylesForHeader.p} ref={newPostElement}>{lang.motto}</p>
         <ul className={stylesForHeader.ul}>
           <li className={stylesForHeader.a} onClick={() => switchLang('ru')}>Русский</li>
           <li className={stylesForHeader.a} onClick={() => switchLang('en')}>English</li>
