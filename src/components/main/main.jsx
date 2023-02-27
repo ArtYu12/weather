@@ -5,8 +5,156 @@ import React,{useEffect,useRef} from 'react';
 
 
 const Main = () => {
+
+
   const lang = useSelector(state => state.language);
   const audio_lang = useSelector(state => state.audio_lang);
+
+/*
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+  const url = 'https://ssfawe1.pythonanywhere.com/weather';
+  const long = position.coords.longitude;
+  const lat = position.coords.latitude;
+  const params = {
+    long,
+    lat,
+  };
+
+  const query = new URLSearchParams(params).toString();
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  fetch(`${url}?${query} ` , options)
+    .then(response => response.json())
+    .then(data => data.json())
+    .catch(error => console.error(error));
+
+}
+getLocation();
+console.log(data)
+
+
+
+  let state = {
+    error:null,
+    isLoaded:false,
+    items:[]
+  };
+  let componentDidMount = () => {
+    fetch('https://ssfawe1.pythonanywhere.com/weather')
+    .then(res => res.json())
+    .then (
+      (result) => {
+        state({
+          isLoaded:true,
+          items: result.weather
+        });
+      },
+      (error) => {
+        state ({
+          isLoaded:true,
+          error
+      });
+      }
+    )
+  }
+  componentDidMount();
+  console.log(state);
+*/
+/*
+gettingWeather = async () => {
+  const api_url = await fetch('https://ssfawe1.pythonanywhere.com/weather');
+  const data = await api_url.json();
+  
+}*/
+
+
+
+
+
+
+
+/*
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  const url = 'https://ssfawe1.pythonanywhere.com/weather';
+  const long = position.coords.longitude;
+  const lat = position.coords.latitude;
+  const params = {
+    long,
+    lat,
+  };
+  const query = new URLSearchParams(params).toString();
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  const request = new XMLHttpRequest();
+  request.open("GET",`${url}?${query} `, options);
+  request.send();
+  request.onload = () => {
+    console.log(request);
+    if(request.status === 200) {
+      console.log(request.response)
+    } else {
+      console.log(`error ${request.status}`);
+    }
+  }
+  
+
+/*
+    return fetch(`${url}?${query} `)
+    .then(response =>{
+      return response.json();
+    }).then(json =>{
+      return console.log(json);
+    } )
+    .catch(error => console.error(error));
+
+    async function getUsers() {
+      let response = await fetch(`${url}?${query} `);
+      let data = await response.json();
+      return data;
+    }
+
+  getUsers().then(response =>{
+    console.log(response)
+  })
+}
+showPosition()
+*/
+
+
+
+
+
+
+
+
+
 
   let audioNode = useRef();
   let pNode = useRef();
@@ -54,9 +202,9 @@ const Main = () => {
 
   useEffect(() => {
     video.current.addEventListener("ended", function () {
-      video.current.pause()
+      video.current.pause();
       video.current.time = 0;
-      video.current.play()
+      video.current.play();
   });
   },[]);
 
@@ -77,7 +225,7 @@ const Main = () => {
   return (
     <main className={stylesForMain.main}>
         <div className={stylesForMain.div}>
-            <button className={stylesForMain.button} onClick={load}>| |</button>
+            <button className={stylesForMain.button} onClick={load} title={lang.title}>| |</button>
         </div>
       <nav>
         <ul className={stylesForMain.ul}>
@@ -94,8 +242,16 @@ const Main = () => {
       </nav>
       <h2 id="weather">{lang.weather}</h2>
       <figure>
-        <figcaption>Блок</figcaption>
-        <video ref={video} autoplay="autoplay" src="/weather.mp4" width="640" height="360" muted="muted"></video>
+        <figcaption>
+          <h4>Павлодар</h4>
+          <b>-3°</b>
+          <ul>
+            <li>Влажность:59</li>
+            <li>Давление:1.385</li>
+            <li>Направление ветра:SW</li>
+          </ul>
+        </figcaption>
+        <video ref={video} autoPlay="autoplay" src="/weather.mp4" width="640" height="360" muted="muted"></video>
       </figure>
       
       <h2 id="importance">{lang.importance}</h2>
