@@ -19,7 +19,9 @@ let lang = {
         parli3:'Third, the data must be reliable. This means that they must be verified and confirmed by experts to ensure the accuracy of the information. Data that has not passed such verification may be incomplete or inaccurate, which may lead to incorrect decisions and forecasts.',
         parli4:'Finally, the data should be accessible and understandable. This means that they should be presented in a format that is understandable to a wide audience, including people without special knowledge in the field of meteorology. In addition, the data should be available on various devices and platforms so that users can easily access it.',
         parend:'In general, the quality of weather data plays an important role in ensuring the safety and prosperity of society. To achieve high data quality, it is necessary to use proven collection methods, standardized formats and reliable data validation processes.',
-        
+        humidity:'Humidity',
+        pressure:'Pressure',
+        wind_direction:'Wind direction',
         сlarityp:'The clarity of weather data plays an important role in their effective use. The simpler and clearer the weather information is presented, the easier it is for people to navigate and make decisions based on it.In general, the clarity of weather data is an important factor for their effective use. To ensure the clarity of weather data, we take into account the needs and level of knowledge of the target audience, use various formats for presenting information and create high-quality and visual materials.',
     },
     'ru':{
@@ -40,6 +42,9 @@ let lang = {
         parli4:'Наконец, данные должны быть доступными и понятными. Это означает, что они должны быть представлены в формате, который понятен широкой аудитории, включая людей без специальных знаний в области метеорологии. Кроме того, данные должны быть доступны на различных устройствах и платформах, чтобы пользователи могли легко получать доступ к ним.',
         parend:'В целом, качество данных о погоде играет важную роль в обеспечении безопасности и процветания общества. Чтобы достичь высокого качества данных, необходимо использовать проверенные методы сбора, стандартизированные форматы и надежные процессы проверки данных.',
         title:'Остановить звук',
+        humidity:'Влажность',
+        pressure:'Давление',
+        wind_direction:'Направление ветра',
         сlarityp:'Понятность данных о погоде играет важную роль в их эффективном использовании. Чем проще и понятнее представлена информация о погоде, тем легче людям ориентироваться и принимать решения на ее основе.В целом, понятность данных о погоде является важным фактором для их эффективного использования. Чтобы обеспечить понятность данных о погоде, мы учитываем потребности и уровень знаний целевой аудитории, использовать различные форматы представления информации и создавать высококачественные и наглядные материалы.',
     },
     'kz':{
@@ -60,8 +65,9 @@ let lang = {
         parli3:'Үшіншіден, деректер сенімді болуы керек. Бұл ақпараттың дұрыстығын қамтамасыз ету үшін оларды сарапшылар тексеріп, растауы керек дегенді білдіреді. Мұндай тексеруден өтпеген деректер толық емес немесе дұрыс емес болуы мүмкін, бұл дұрыс емес шешімдер мен болжамдарға әкелуі мүмкін.',
         parli4:'Соңында, деректер қол жетімді және түсінікті болуы керек. Бұл дегеніміз, олар метеорология бойынша арнайы білімі жоқ адамдарды қоса алғанда, кең аудиторияға түсінікті форматта ұсынылуы керек. Сонымен қатар, пайдаланушылар оларға оңай қол жеткізе алатындай деректер әртүрлі құрылғылар мен платформаларда қол жетімді болуы керек.',
         parend:'Жалпы, ауа-райы деректерінің сапасы қоғамның қауіпсіздігі мен өркендеуін қамтамасыз етуде маңызды рөл атқарады. Деректердің жоғары сапасына қол жеткізу үшін дәлелденген жинау әдістерін, стандартталған форматтарды және деректерді тексерудің сенімді процестерін қолдану қажет.',
-        
-        
+        humidity:'Ылғалдылық',
+        pressure:'Қысым',
+        wind_direction:'Жел бағыты',
         сlarityp:'Ауа-райы деректерінің түсінігі оларды тиімді пайдалануда маңызды рөл атқарады. Ауа-райы туралы ақпарат неғұрлым қарапайым және түсінікті болса, адамдарға оның негізінде шарлау және шешім қабылдау оңайырақ болады.Жалпы, ауа-райы туралы мәліметтердің түсінігі оларды тиімді пайдаланудың маңызды факторы болып табылады. Ауа-райы туралы мәліметтердің түсінікті болуын қамтамасыз ету үшін біз мақсатты аудиторияның қажеттіліктері мен білім деңгейін ескереміз, ақпаратты ұсынудың әртүрлі форматтарын қолданамыз және жоғары сапалы және көрнекі материалдар жасаймыз.',
     }
 }

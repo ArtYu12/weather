@@ -9,8 +9,6 @@ const Main = () => {
 
   const lang = useSelector(state => state.language);
   const audio_lang = useSelector(state => state.audio_lang);
-
-/*
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -18,8 +16,34 @@ const Main = () => {
       console.log("Geolocation is not supported by this browser.");
     }
   }
-
   function showPosition(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var apikey = '35651bff673244bb9be2efcae3abcb99';
+    var url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apikey}&no_annotations=1`;
+  
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        var city = data.results[0].components.city;
+        var cut = city.indexOf(' ');
+        city = city.substring(0,cut);
+        if(city) 
+        document.getElementById("city-weather").textContent = city;
+      })
+      .catch(error => console.log(error));
+  }
+  getLocation();
+
+  function getWeather() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showWeather);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showWeather(position) {
   const url = 'https://ssfawe1.pythonanywhere.com/weather';
   const long = position.coords.longitude;
   const lat = position.coords.latitude;
@@ -37,16 +61,38 @@ const Main = () => {
     }
   };
 
-  fetch(`${url}?${query} ` , options)
+  fetch(`${url}?${query} `,options)
     .then(response => response.json())
-    .then(data => data.json())
+    .then((data => {
+
+      var weather = data.weather.temp;
+      weather = Math.round(weather);
+
+      var pressure = data.weather.pressure;
+      pressure = String(pressure).substring(0,4);
+
+      var humidity = data.weather.humidity;
+      var wind_direction = data.weather.wind_direction;
+
+      if(data) 
+        document.getElementById("weatherdiv").textContent = weather+"°";
+        document.getElementById("pressurediv").textContent = lang.pressure+": "+pressure;
+        document.getElementById("humiditydiv").textContent = lang.humidity+": "+humidity;
+        document.getElementById("wind_directiondiv").textContent = lang.wind_direction+": "+wind_direction;
+    }))
     .catch(error => console.error(error));
 
 }
-getLocation();
-console.log(data)
+getWeather();
 
 
+
+
+
+
+
+
+/*
 
   let state = {
     error:null,
@@ -243,12 +289,12 @@ showPosition()
       <h2 id="weather">{lang.weather}</h2>
       <figure>
         <figcaption>
-          <h4>Павлодар</h4>
-          <b>-3°</b>
+          <h4 id="city-weather"></h4>
+          <b id='weatherdiv'></b>
           <ul>
-            <li>Влажность:59</li>
-            <li>Давление:1.385</li>
-            <li>Направление ветра:SW</li>
+            <li id='humiditydiv'></li>
+            <li id='pressurediv'></li>
+            <li id='wind_directiondiv'></li>
           </ul>
         </figcaption>
         <video ref={video} autoPlay="autoplay" src="/weather.mp4" width="640" height="360" muted="muted"></video>
