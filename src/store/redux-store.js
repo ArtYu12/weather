@@ -22,6 +22,9 @@ let lang = {
         humidity:'Humidity',
         pressure:'Pressure',
         wind_direction:'Wind direction',
+        wind_speed:'Wind speed',
+        wind_speedE:'m/s',
+        feels_like:'Feels like',
         сlarityp:'The clarity of weather data plays an important role in their effective use. The simpler and clearer the weather information is presented, the easier it is for people to navigate and make decisions based on it.In general, the clarity of weather data is an important factor for their effective use. To ensure the clarity of weather data, we take into account the needs and level of knowledge of the target audience, use various formats for presenting information and create high-quality and visual materials.',
     },
     'ru':{
@@ -45,6 +48,9 @@ let lang = {
         humidity:'Влажность',
         pressure:'Давление',
         wind_direction:'Направление ветра',
+        wind_speed:'Скорость ветра',
+        wind_speedE:'м/с',
+        feels_like:'Ощущаеться как',
         сlarityp:'Понятность данных о погоде играет важную роль в их эффективном использовании. Чем проще и понятнее представлена информация о погоде, тем легче людям ориентироваться и принимать решения на ее основе.В целом, понятность данных о погоде является важным фактором для их эффективного использования. Чтобы обеспечить понятность данных о погоде, мы учитываем потребности и уровень знаний целевой аудитории, использовать различные форматы представления информации и создавать высококачественные и наглядные материалы.',
     },
     'kz':{
@@ -68,6 +74,9 @@ let lang = {
         humidity:'Ылғалдылық',
         pressure:'Қысым',
         wind_direction:'Жел бағыты',
+        wind_speed:'Желдің жылдамдығы',
+        wind_speedE:'м/с',
+        feels_like:'Бұл сезім',
         сlarityp:'Ауа-райы деректерінің түсінігі оларды тиімді пайдалануда маңызды рөл атқарады. Ауа-райы туралы ақпарат неғұрлым қарапайым және түсінікті болса, адамдарға оның негізінде шарлау және шешім қабылдау оңайырақ болады.Жалпы, ауа-райы туралы мәліметтердің түсінігі оларды тиімді пайдаланудың маңызды факторы болып табылады. Ауа-райы туралы мәліметтердің түсінікті болуын қамтамасыз ету үшін біз мақсатты аудиторияның қажеттіліктері мен білім деңгейін ескереміз, ақпаратты ұсынудың әртүрлі форматтарын қолданамыз және жоғары сапалы және көрнекі материалдар жасаймыз.',
     }
 }

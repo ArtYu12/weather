@@ -26,10 +26,16 @@ const Main = () => {
       .then(response => response.json())
       .then(data => {
         var city = data.results[0].components.city;
+        city = city.trim()
         var cut = city.indexOf(' ');
-        city = city.substring(0,cut);
-        if(city) 
-        document.getElementById("city-weather").textContent = city;
+
+        if(cut === -1) {
+          document.getElementById("city-weather").textContent = city;
+        } else {
+          city = city.substring(0,cut);
+          document.getElementById("city-weather").textContent = city;
+        }
+
       })
       .catch(error => console.log(error));
   }
@@ -64,7 +70,6 @@ const Main = () => {
   fetch(`${url}?${query} `,options)
     .then(response => response.json())
     .then((data => {
-
       var weather = data.weather.temp;
       weather = Math.round(weather);
 
@@ -73,12 +78,18 @@ const Main = () => {
 
       var humidity = data.weather.humidity;
       var wind_direction = data.weather.wind_direction;
-
+      var wind_speed = data.weather.wind_speed;
+      var feels_like = data.weather.feels_like;
+      feels_like = Math.round(feels_like);
+    
       if(data) 
         document.getElementById("weatherdiv").textContent = weather+"°";
         document.getElementById("pressurediv").textContent = lang.pressure+": "+pressure;
         document.getElementById("humiditydiv").textContent = lang.humidity+": "+humidity;
         document.getElementById("wind_directiondiv").textContent = lang.wind_direction+": "+wind_direction;
+        document.getElementById("wind_speeddiv").textContent = lang.wind_speed+": "+wind_speed+lang.wind_speedE;
+        document.getElementById("feels_likediv").textContent = lang.feels_like+": "+feels_like+"°";
+        
     }))
     .catch(error => console.error(error));
 
@@ -291,10 +302,13 @@ showPosition()
         <figcaption>
           <h4 id="city-weather"></h4>
           <b id='weatherdiv'></b>
+          <span id='feels_likediv'></span>
           <ul>
             <li id='humiditydiv'></li>
             <li id='pressurediv'></li>
             <li id='wind_directiondiv'></li>
+            <li id='wind_speeddiv'></li>
+            
           </ul>
         </figcaption>
         <video ref={video} autoPlay="autoplay" src="/weather.mp4" width="640" height="360" muted="muted"></video>

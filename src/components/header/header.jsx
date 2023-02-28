@@ -22,11 +22,17 @@ function showPosition(position) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
+
       var city = data.results[0].components.city;
+      city = city.trim()
       var cut = city.indexOf(' ');
-      city = city.substring(0,cut);
-      if(city)
-      document.getElementById("city").textContent = lang.city+": "+city;
+
+      if(cut === -1) {
+        document.getElementById("city").textContent = lang.city+": "+city;
+      } else {
+        city = city.substring(0,cut);
+        document.getElementById("city").textContent = lang.city+": "+city;
+      }
     })
     .catch(error => console.log(error));
 }
